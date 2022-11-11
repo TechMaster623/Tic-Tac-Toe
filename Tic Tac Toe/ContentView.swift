@@ -40,7 +40,6 @@ struct ContentView: View {
                     }
                     .rotation3DEffect(.init(degrees: moves[index] != "" ? 180 : 0), axis: (x: 0.0, y : 1.0, z: 0.0))
                 }
-                
             }
         }
         preferredColorScheme(.dark)
@@ -54,29 +53,26 @@ struct ContentView: View {
                 
             }
     }
+    
     private func checkForWinner() {
-        checkLine(a:0, b: 1, c: 2) 
-        }
+        checkLine(a:0, b: 1, c: 2)
+    }
+    
     private func checkLine(a: Int, b: Int, c: Int) {
         if moves[a] != "" && moves[a] == moves[b] && moves[b] == moves[c] {
             winMessage = "\(moves[a]) is the winner!"
             gameOver = true
-    }
-    
         }
+        
     }
-    
-    
-    
-    
-    
-    
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
-        }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
-    
-    
+}
+
+
 
 
